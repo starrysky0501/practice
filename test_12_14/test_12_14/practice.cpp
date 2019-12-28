@@ -61,4 +61,4 @@ int main()
 	return 0;
 }
 
-//switch一定注意别忘了加break
+//switch一定注意别忘了加break,否则break后面的语句都会执行
