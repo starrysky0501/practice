@@ -1,7 +1,7 @@
-//ţ�ͣ�����
+//牛客：素数
 
-//��Ŀ����
-//����һ������n(2 <= n <= 10000)��Ҫ��������д�1���������֮��(������1���������)��λΪ1�����������û������� - 1��
+//题目描述
+//输入一个整数n(2 <= n <= 10000)，要求输出所有从1到这个整数之间(不包括1和这个整数)个位为1的素数，如果没有则输出 - 1。
 
 //#include<iostream>
 //#include<vector>
@@ -14,7 +14,7 @@
 //	{
 //		for (int i = 11; i<num; i += 10)
 //		{
-//			int tags = 1;                             //��ע�⣺����ֵ��Ϊ�ֲ���������������Ϊȫ�ֱ���ʱ��һ��Ҫ�ڴ˴���tags��Ϊ1
+//			int tags = 1;                             //请注意：将该值设为局部变量；但当设置为全局变量时，一定要在此处将tags变为1
 //			for (int j = 2; j<i; j++)
 //			{
 //				if (i%j == 0)
@@ -44,9 +44,9 @@
 
 
 
-//ţ�ͣ���С��K����
+//牛客：最小的K个数
 
-//����n���������ҳ�������С��K��������������4,5,1,6,2,7,3,8��8�����֣�����С��4��������1,2,3,4,��
+//输入n个整数，找出其中最小的K个数。例如输入4,5,1,6,2,7,3,8这8个数字，则最小的4个数字是1,2,3,4,。
 
 //class Solution {
 //public:
@@ -59,7 +59,7 @@
 //	vector<int> GetLeastNumbers_Solution(vector<int> input, int k) {
 //		int j = 0;
 //		vector<int> topk;
-//		if (k <= 0 || k>input.size())        //��ע�⣬��дk���жϣ��ᵼ�������push_back�����е�����ʱջ���
+//		if (k <= 0 || k>input.size())        //请注意，不写k的判断，会导致下面的push_back数组中的数据时栈溢出
 //			return topk;
 //
 //		while (j<input.size() - 1)
@@ -85,8 +85,26 @@
 
 
 
+//方法二：采用全排列解决最小的K个数
+//class Solution {
+//public:
+//	vector<int> GetLeastNumbers_Solution(vector<int> input, int k) {
+//		vector<int> res;
+//		if (input.empty() || k>input.size()) return res;
+//
+//		sort(input.begin(), input.end());
+//
+//		for (int i = 0; i<k; i++)
+//			res.push_back(input[i]);
+//
+//		return res;
+//
+//	}
+//};
 
-//ţ�ͣ��Ǽ�����(��C���Ը�ʽ�������)
+
+
+//牛客：星际密码(用C语言格式控制输出)
 
 //#include<iostream>
 //#include<stdio.h>
@@ -122,14 +140,14 @@
 //	return 0;
 //}
 
-//�����ĿӦע�⣺
-//1.쳲��������е���������40֮������ֵ�ͻ��÷ǳ��ǳ��Ӵ󣬵�������ֻ��Ҫ����λ���֣�����λ���ͱ���Ŀ�޹أ���Ȼ��int�洢���������ȳ���intʱ��
-//��λ�����������ôȱʧ���ݣ�������Ӱ�����λ��ȡֵ�����Բ���һλ���ֺ�һλ�������֤����
-//2.������4Ϊʱ��Ӧ��0��C�����ж������ĸ�ʽ���������c++Ӧת�����ַ�����+ȥ����
+//这个题目应注意：
+//1.斐波那契数列的项数超过40之后，他的值就会变得非常非常庞大，但是我们只需要后四位数字，其余位数和本题目无关，虽然用int存储，但当精度超过int时，
+//高位溢出，无论怎么缺失数据，都并不影响低四位的取值，可以采用一位数字和一位数字相加证明。
+//2.当不够4为时，应补0，C语言有对整数的格式控制输出，c++应转换成字符串和+去处理
 
 
 
-//ţ�ͣ��Ǽ�����(��c++��ʽ�������)
+//牛客：星际密码(用c++格式控制输出)
 //#include<iostream>
 //#include<stdio.h>
 //#include<vector>
